@@ -16,16 +16,16 @@ import { dummyData } from "./Data";
 
 const headCells: any = [
   {
-    id: "name",
+    id: "Partner Name",
     numeric: false,
     disablePadding: false,
-    label: "Name",
+    label: "Partner Name",
   },
   {
-    id: "Role",
+    id: "Mobile",
     numeric: false,
     disablePadding: false,
-    label: "Role",
+    label: "Mobile",
   },
   {
     id: "Email",
@@ -34,27 +34,15 @@ const headCells: any = [
     label: "Email",
   },
   {
-    id: "Mobile",
+    id: "Manage",
     numeric: true,
     disablePadding: false,
-    label: "Mobile",
-  },
-  {
-    id: "Status",
-    numeric: true,
-    disablePadding: false,
-    label: "Manage Status",
-  },
-  {
-    id: "Actions",
-    numeric: true,
-    disablePadding: false,
-    label: "Actions",
+    label: "Manage",
   },
 ];
 
 const createRow = (props: any) => {
-  const { name, Role, Email, date, status, ...rest } = props;
+  const { name, Mobile, Email, date, status, ...rest } = props;
 
   return (
     <TableRow>
@@ -62,11 +50,11 @@ const createRow = (props: any) => {
         <Text variant="subtitle1">{name}</Text>
       </TableCell>
       <TableCell component={"th"} scope="row" padding="normal">
-        {Role &&
-          Role.map((Role: any) => (
+        {Mobile &&
+          Mobile.map((Mobile: any) => (
             <Chip
-              key={Role._id}
-              label={Role.name}
+              key={Mobile._id}
+              label={Mobile.Number}
               variant="outlined"
               color="primary"
               size="small"
@@ -105,7 +93,7 @@ const createRow = (props: any) => {
               borderRadius: "50%",
             }}
             size="small"
-            onClick={() => Email.view?.({ name, Role, date, ...rest })}
+            onClick={() => Email.view?.({ name, Mobile, date, ...rest })}
           >
             <Visibility />
           </IconButton>
@@ -139,10 +127,10 @@ export const UsersTable = ({
   };
 
   const tableData = useMemo(() => {
-    return data.map(({ addedBy, Role, active, status, ...rest }: any) =>
+    return data.map(({ addedBy, Mobile, active, status, ...rest }: any) =>
       createRow({
         name: addedBy.firstName + " " + addedBy.lastName,
-        Role,
+        Mobile,
         Email,
         active,
         status,

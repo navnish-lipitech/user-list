@@ -10,7 +10,7 @@ import {
 import debounce from "lodash/debounce";
 import UsersTable from "./UsersTable";
 import { APPOINTMENT_FIELD_NAMES } from "./constants";
-import { CreateUser } from "./create";
+import { CreateNewIndustry } from "./CreateIndustry";
 
 export type Filters = {
   search: string;
@@ -21,8 +21,7 @@ type Props = {
 };
 
 export const ListUsers: React.FC<Props> = ({ onView }) => {
-  const [showUser, setShowUser] = useState(false);
-
+  const [showIndustry, setShowIndustry] = useState(false);
   const [filters, setFilters] = useState<Filters>({
     [APPOINTMENT_FIELD_NAMES.search]: "",
   });
@@ -46,17 +45,17 @@ export const ListUsers: React.FC<Props> = ({ onView }) => {
           pt={2}
           px={2}
         >
-          <Typography variant="h3">User List</Typography>
+          <Typography variant="h3">Industry Management</Typography>
 
           <Box gap={1} display="flex">
             <Box>
               <Button
                 variant="contained"
                 onClick={() => {
-                  setShowUser(true);
+                  setShowIndustry(true);
                 }}
               >
-                Add New User
+                Create New Category
               </Button>
             </Box>
           </Box>
@@ -73,11 +72,11 @@ export const ListUsers: React.FC<Props> = ({ onView }) => {
         </CardContent>
       </Box>
 
-      <CreateUser
+      <CreateNewIndustry
         onClose={() => {
-          setShowUser(false);
+          setShowIndustry(false);
         }}
-        open={showUser}
+        open={showIndustry}
       />
     </>
   );

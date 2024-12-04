@@ -1,0 +1,45 @@
+export const dummyData = [
+  {
+    _id: "1",
+    addedBy: { firstName: "John", lastName: "Doe" },
+    category: [
+      { _id: "101", name: "Consultation" },
+      { _id: "102", name: "Follow-up" },
+    ],
+    date: "2024-11-01",
+    status: "Pending",
+    active: true,
+  },
+  {
+    _id: "2",
+    addedBy: { firstName: "Jane", lastName: "Smith" },
+    category: [{ _id: "103", name: "Routine Check" }],
+    date: "2024-11-03",
+    status: "Completed",
+    active: true,
+  },
+  {
+    _id: "3",
+    addedBy: { firstName: "Alice", lastName: "Johnson" },
+    category: [{ _id: "104", name: "Emergency" }],
+    date: "2024-11-05",
+    status: "Cancelled",
+    active: false,
+  },
+  {
+    _id: "4",
+    addedBy: { firstName: "Michael", lastName: "Williams" },
+    category: [{ _id: "105", name: "Annual Review" }],
+    date: "2024-11-07",
+    status: "In Progress",
+    active: true,
+  },
+  {
+    _id: "5",
+    addedBy: { firstName: "Emily", lastName: "Davis" },
+    category: [{ _id: "106", name: "Specialist Visit" }],
+    date: "2024-11-10",
+    status: "Pending",
+    active: true,
+  },
+];

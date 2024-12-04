@@ -16,34 +16,34 @@ import { dummyData } from "./Data";
 
 const headCells: any = [
   {
-    id: "name",
-    numeric: false,
-    disablePadding: false,
-    label: "Name",
-  },
-  {
     id: "Role",
     numeric: false,
     disablePadding: false,
     label: "Role",
   },
   {
-    id: "Email",
-    numeric: true,
+    id: "Permission",
+    numeric: false,
     disablePadding: false,
-    label: "Email",
+    label: "Permission",
   },
   {
-    id: "Mobile",
+    id: "Users",
     numeric: true,
     disablePadding: false,
-    label: "Mobile",
+    label: "Users",
+  },
+  {
+    id: "Created on",
+    numeric: true,
+    disablePadding: false,
+    label: "Created on",
   },
   {
     id: "Status",
     numeric: true,
     disablePadding: false,
-    label: "Manage Status",
+    label: "Status",
   },
   {
     id: "Actions",
@@ -113,9 +113,15 @@ const createRow = (props: any) => {
       </TableCell>
 
       <TableCell component={"th"} scope="row" padding="normal">
-        <Box display={"flex"} alignItems={"center"} gap={1}></Box>
+        <Box display={"flex"} alignItems={"center"} gap={1}>
+         
+        </Box>
       </TableCell>
+
     </TableRow>
+
+    
+    
   );
 };
 
