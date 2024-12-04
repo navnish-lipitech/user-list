@@ -10,7 +10,6 @@ import {
 import debounce from "lodash/debounce";
 import UsersTable from "./UsersTable";
 import { APPOINTMENT_FIELD_NAMES } from "./constants";
-import { CreateUser } from "./create";
 
 export type Filters = {
   search: string;
@@ -21,8 +20,6 @@ type Props = {
 };
 
 export const ListUsers: React.FC<Props> = ({ onView }) => {
-  const [showUser, setShowUser] = useState(false);
-
   const [filters, setFilters] = useState<Filters>({
     [APPOINTMENT_FIELD_NAMES.search]: "",
   });
@@ -46,19 +43,10 @@ export const ListUsers: React.FC<Props> = ({ onView }) => {
           pt={2}
           px={2}
         >
-          <Typography variant="h3">User List</Typography>
+          <Typography variant="h3">Connection approval List</Typography>
 
           <Box gap={1} display="flex">
-            <Box>
-              <Button
-                variant="contained"
-                onClick={() => {
-                  setShowUser(true);
-                }}
-              >
-                Add New User
-              </Button>
-            </Box>
+           
           </Box>
         </Box>
 
@@ -72,13 +60,6 @@ export const ListUsers: React.FC<Props> = ({ onView }) => {
           </AnimationWrapper>
         </CardContent>
       </Box>
-
-      <CreateUser
-        onClose={() => {
-          setShowUser(false);
-        }}
-        open={showUser}
-      />
     </>
   );
 };

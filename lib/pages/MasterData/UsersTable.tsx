@@ -16,34 +16,34 @@ import { dummyData } from "./Data";
 
 const headCells: any = [
   {
-    id: "name",
+    id: "Category name",
     numeric: false,
     disablePadding: false,
-    label: "Name",
+    label: "Category name",
   },
   {
-    id: "Role",
+    id: "Sub-Category Name",
     numeric: false,
     disablePadding: false,
-    label: "Role",
+    label: "Sub-Category Name",
   },
   {
-    id: "Email",
+    id: "Industry",
     numeric: true,
     disablePadding: false,
-    label: "Email",
+    label: "Industry",
   },
   {
-    id: "Mobile",
+    id: "Created on",
     numeric: true,
     disablePadding: false,
-    label: "Mobile",
+    label: "Created on",
   },
   {
     id: "Status",
     numeric: true,
     disablePadding: false,
-    label: "Manage Status",
+    label: "Status",
   },
   {
     id: "Actions",
